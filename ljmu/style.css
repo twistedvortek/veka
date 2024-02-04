@@ -99,6 +99,7 @@ input:checked + .slider:before {
     margin: 10px;
     padding: 20px;
     width: 300px;
+    text-align: center; /* Center the content */
 }
 
 .placeholder {
@@ -106,6 +107,7 @@ input:checked + .slider:before {
     height: 0;
     padding-bottom: 56%;
     position: relative;
+    overflow: hidden; /* Ensure content does not overflow */
     margin-bottom: 20px;
 }
 
