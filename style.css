@@ -2,15 +2,26 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1E1E1E;
     color: #FFFFFF;
+    overflow: hidden; /* To hide overflow from the background video/gif */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG11ZDJ1c2owaTJveWt5emEzNjhycmd5MzM3bnZobmJmczVqcmMyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9jWu7BuHufyLs7m/giphy.gif') center/cover fixed;
+    filter: blur(8px) brightness(0.4);
+    z-index: -1; /* Behind everything else */
 }
 
 header {
-    background-color: #FFA500;
-    color: #000000;
     text-align: center;
-    padding: 1em;
+    padding: 2em 0;
+    position: relative;
+    z-index: 1; /* On top of background */
 }
 
 main {
@@ -18,33 +29,39 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
+    position: relative;
+    z-index: 1; /* On top of background */
 }
 
-section {
-    background-color: #333333;
-    color: #FFFFFF;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    width: 300px;
+.coming-soon {
+    text-align: center;
+    width: 100%;
+    padding: 2em;
+    position: relative;
+    z-index: 1; /* On top of background */
+}
+
+.coming-soon h2 {
+    font-size: 2em;
+    margin: 0;
 }
 
 footer {
-    background-color: #333333;
-    color: #FFFFFF;
     text-align: center;
     padding: 1em;
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1; /* On top of background */
 }
 
-button {
+button.sayara-button {
     background-color: #FFA500;
-    color: #323232;
+    color: #000000;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 1em;
 }

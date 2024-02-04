@@ -3,26 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEKA Homepage</title>
+    <title>Main Dashboard | Final Year Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background"></div>
+
     <header>
-        <h1>Homepage (Coming Soon)</h1>
+        <h1>VEKA.gg</h1>
     </header>
 
     <main>
-      <button onclick="redirectToLJMU()">Final Year Project</button>
+        <div class="coming-soon">
+            <h2>Coming Soon</h2>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; Copyright 2024 @whoisShafaat</p>
+        <p>&copy; 2024 VEKA.gg</p>
+        <button class="sayara-button">Sayara</button>
     </footer>
 
     <script>
-        function redirectToLJMU() {
-            window.location.href = 'https://twistedvortek.github.io/veka/ljmu/';
-        }
+        document.querySelector('.sayara-button').addEventListener('click', function() {
+            // Handle Sayara button click, redirect to main VEKA.gg page
+            window.location.href = 'https://twistedvortek.github.io/veka/';
+        });
     </script>
 </body>
 </html>
