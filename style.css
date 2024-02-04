@@ -4,6 +4,7 @@ body {
     padding: 0;
     color: #FFFFFF;
     overflow: hidden; /* To hide overflow from the background video/gif */
+    position: relative; /* Add this for correct z-index positioning */
 }
 
 .background {
@@ -17,11 +18,13 @@ body {
     z-index: -1; /* Behind everything else */
 }
 
-header {
+.floating-header {
     text-align: center;
-    padding: 2em 0;
-    position: relative;
-    z-index: 1; /* On top of background */
+    padding: 1em 0;
+    background-color: #333333;
+    position: fixed;
+    width: 100%;
+    z-index: 2; /* Above the main content and background */
 }
 
 main {
@@ -46,13 +49,14 @@ main {
     margin: 0;
 }
 
-footer {
+.floating-footer {
     text-align: center;
     padding: 1em;
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 1; /* On top of background */
+    z-index: 2; /* Above the main content and background */
+    background-color: #333333;
 }
 
 button.sayara-button {
