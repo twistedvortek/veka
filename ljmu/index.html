@@ -7,57 +7,87 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background"></div>
+    <header class="ljmu-header">
+        <button id="home-button">Home</button>
+        <h1>Sayara - Realtime Dashboard Stats</h1>
+        <div class="dark-mode-switch">
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
 
-    <div class="ljmu-header">
-        <button onclick="goHome()">Home</button>
-        <h1>Sayara</h1>
-        <label class="switch">
-            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
-            <span class="slider round"></span>
-        </label>
-    </div>
-
-    <main>
-        <section class="placeholder">
-            <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/yoJC2HB0ArmYPslmAU" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/supercompressor-russia-dashcam-ghost-car-yoJC2HB0ArmYPslmAU">via GIPHY</a></p>
-            <!-- Your content for the front camera goes here -->
+    <main class="main-content">
+        <!-- Box for Front Camera -->
+        <section class="section">
+            <h2>Front Camera</h2>
+            <div class="placeholder">
+                <iframe src="https://giphy.com/embed/yoJC2HB0ArmYPslmAU" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div>
         </section>
 
-        <section class="placeholder">
-            <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/SwuP4hyvh8vXr9dy83" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/pbsdigitalstudios-snow-ice-weathered-SwuP4hyvh8vXr9dy83">via GIPHY</a></p>
-            <!-- Your content for the back camera goes here -->
+        <!-- Box for Back Camera -->
+        <section class="section">
+            <h2>Back Camera</h2>
+            <div class="placeholder">
+                <iframe src="https://giphy.com/embed/SwuP4hyvh8vXr9dy83" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div>
         </section>
 
-        <section class="placeholder">
-            <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/qQJ1xyQXVuVfW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/top-driving-distractions-qQJ1xyQXVuVfW">via GIPHY</a></p>
-            <!-- Your content for the interior camera goes here -->
+        <!-- Box for Interior Camera -->
+        <section class="section">
+            <h2>Interior Camera</h2>
+            <div class="placeholder">
+                <iframe src="https://giphy.com/embed/qQJ1xyQXVuVfW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            </div>
+        </section>
+
+        <!-- Live Stats Box -->
+        <section class="section live-section">
+            <h2>Live Stats</h2>
+            <div class="stat">
+                <p>Current Speed: <span id="current-speed">0</span> km/h</p>
+            </div>
+            <div class="stat">
+                <p>Current Duration of Travel: <span id="current-duration">0</span> mins</p>
+            </div>
+            <div class="stat">
+                <p>Driving Behaviour Meter: <span id="driving-behaviour">0</span></p>
+            </div>
+            <div class="stat">
+                <p>Current Traffic Level: <span id="current-traffic">0</span></p>
+            </div>
+            <div class="stat">
+                <p>Current Location: <span id="current-location">Unknown</span></p>
+            </div>
+        </section>
+
+        <!-- Weekly Stats Box -->
+        <section class="section weekly-section">
+            <h2>Weekly Stats</h2>
+            <div class="stat">
+                <p>Current Speed: <span id="weekly-current-speed">0</span> km/h</p>
+            </div>
+            <div class="stat">
+                <p>Current Duration of Travel: <span id="weekly-current-duration">0</span> mins</p>
+            </div>
+            <div class="stat">
+                <p>Driving Behaviour Meter: <span id="weekly-driving-behaviour">0</span></p>
+            </div>
+            <div class="stat">
+                <p>Current Traffic Level: <span id="weekly-current-traffic">0</span></p>
+            </div>
+            <div class="stat">
+                <p>Current Location: <span id="weekly-current-location">Unknown</span></p>
+            </div>
         </section>
     </main>
 
-    <section class="live-section">
-        <h2>Live Statistics</h2>
-        <!-- Live statistics content goes here -->
-    </section>
-
-    <section class="weekly-section">
-        <h2>Weekly Statistics</h2>
-        <!-- Weekly statistics content goes here -->
-    </section>
-
-    <footer>
+    <footer class="footer">
         <p>&copy; Copyright 2024 @whoisShafaat</p>
     </footer>
 
-    <script>
-        function goHome() {
-            window.location.href = 'https://twistedvortek.github.io/veka/';
-        }
-
-        function toggleDarkMode() {
-            const body = document.body;
-            body.classList.toggle('dark-mode');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

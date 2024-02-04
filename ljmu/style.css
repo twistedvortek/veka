@@ -111,12 +111,19 @@ input:checked + .slider:before {
     margin-bottom: 20px;
 }
 
-.footer {
-    background-color: #333333;
-    color: #FFFFFF;
+/* Add the new styles for stats */
+.live-section, .weekly-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.stat {
+    width: 48%; /* Adjust as needed for spacing */
+    margin: 10px;
+    padding: 15px;
+    background-color: #555555; /* Dark gray for stats boxes */
+    border-radius: 10px;
     text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    color: #FFFFFF;
 }
