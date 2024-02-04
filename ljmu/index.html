@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Sayara - Realtime Dashboard Stats</h1>
-    </header>
+    <div class="background"></div>
+
+    <div class="ljmu-header">
+        <button onclick="goHome()">Home</button>
+        <h1>Sayara</h1>
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+            <span class="slider round"></span>
+        </label>
+    </div>
 
     <main>
         <section class="placeholder">
@@ -28,8 +35,29 @@
         </section>
     </main>
 
+    <section class="live-section">
+        <h2>Live Statistics</h2>
+        <!-- Live statistics content goes here -->
+    </section>
+
+    <section class="weekly-section">
+        <h2>Weekly Statistics</h2>
+        <!-- Weekly statistics content goes here -->
+    </section>
+
     <footer>
         <p>&copy; Copyright 2024 @whoisShafaat</p>
     </footer>
+
+    <script>
+        function goHome() {
+            window.location.href = 'https://twistedvortek.github.io/veka/';
+        }
+
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
 </html>
