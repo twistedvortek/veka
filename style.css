@@ -1,71 +1,225 @@
-body {
-    font-family: 'Arial', sans-serif;
+Certainly. Here's a detailed CSS for the main page:
+
+```css
+/* Reset styles */
+body, h1, h2, p, form, input, button {
     margin: 0;
     padding: 0;
-    color: #FFFFFF;
-    overflow: hidden; /* To hide overflow from the background video/gif */
-    position: relative; /* Add this for correct z-index positioning */
 }
 
-.background {
-    position: fixed;
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: #1E1E1E; /* Dark background color */
+    color: #FFFFFF; /* White text color */
+}
+
+/* Global styles */
+.overlay {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
     height: 100vh;
-    background: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG11ZDJ1c2owaTJveWt5emEzNjhycmd5MzM3bnZobmJmczVqcmMyNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ov9jWu7BuHufyLs7m/giphy.gif') center/cover fixed;
-    filter: blur(8px) brightness(0.4);
-    z-index: -1; /* Behind everything else */
-}
-
-.floating-header {
-    text-align: center;
-    padding: 1em 0;
-    background-color: #333333;
-    position: fixed;
-    width: 100%;
-    z-index: 2; /* Above the main content and background */
-}
-
-main {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-    position: relative;
-    z-index: 1; /* On top of background */
-}
-
-.coming-soon {
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    width: 100%;
-    padding: 2em;
-    position: relative;
-    z-index: 1; /* On top of background */
 }
 
-.coming-soon h2 {
-    font-size: 2em;
-    margin: 0;
+.hero .content {
+    z-index: 1;
 }
 
-.floating-footer {
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 2; /* Above the main content and background */
-    background-color: #333333;
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-button.sayara-button {
-    background-color: #FFA500;
-    color: #000000;
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1em;
+    background-color: #FFA500; /* Orange button color */
+    color: #000000; /* Black text color */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1em;
 }
+
+/* About Us Section */
+.about {
+    background-color: #333333; /* Dark gray background color */
+    color: #FFFFFF; /* White text color */
+    padding: 40px;
+    text-align: center;
+}
+
+.about-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.about-image {
+    background-image: url('about-image.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Team Section */
+.team {
+    background-color: #555555; /* Dark gray background color */
+    color: #FFFFFF; /* White text color */
+    padding: 40px;
+    text-align: center;
+}
+
+.team-text h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.team-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.team-image {
+    background-image: url('team-image.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Our Projects Section */
+.projects {
+    background-color: #333333; /* Dark gray background color */
+    color: #FFFFFF; /* White text color */
+    padding: 40px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Our Socials Section */
+.socials {
+    background-color: #555555; /* Dark gray background color */
+    color: #FFFFFF; /* White text color */
+    padding: 40px;
+    text-align: center;
+}
+
+.socials h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* News Section */
+.news {
+    background-color: #333333; /* Dark gray background color */
+    color: #FFFFFF; /* White text color */
+    padding: 40px;
+    text-align: center;
+}
+
+.news h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #555555; /* Dark gray background color */
+    color: #FFFFFF; /* White text color */
+    text-align: center;
+    padding: 20px;
+}
+
+/* Cookie Banner */
+.cookie-banner {
+    /* Styles for cookie banner */
+}
+
+/* Scroll-to-Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    /* Add more responsive styles as needed */
+}
+```
+
+Replace the placeholder URLs with your actual image URLs. Adjust the styles as needed for your design preferences.
