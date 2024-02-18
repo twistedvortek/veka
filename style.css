@@ -57,7 +57,7 @@ form input {
     font-size: 1em;
     margin-right: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 form button {
@@ -66,7 +66,7 @@ form button {
     background-color: #FFA500; /* Orange button color */
     color: #000000; /* Black text color */
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer;
 }
 
@@ -78,14 +78,15 @@ form button {
     text-align: center;
 }
 
-.about-text h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.about .content {
+    display: flex;
+    flex-direction: row-reverse; /* Change to row for alternating sides */
+    align-items: center;
+    justify-content: space-between;
 }
 
-.about-text p {
-    font-size: 1.2em;
-    line-height: 1.6;
+.about-text {
+    width: 50%; /* Adjust as needed */
 }
 
 .about-image {
@@ -94,10 +95,7 @@ form button {
     background-position: center;
     width: 300px;
     height: 300px;
-    border-radius: 50%;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 0%;
 }
 
 /* Team Section */
@@ -108,14 +106,15 @@ form button {
     text-align: center;
 }
 
-.team-text h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.team .content {
+    display: flex;
+    flex-direction: row; /* Change to row-reverse for alternating sides */
+    align-items: center;
+    justify-content: space-between;
 }
 
-.team-text p {
-    font-size: 1.2em;
-    line-height: 1.6;
+.team-text {
+    width: 50%; /* Adjust as needed */
 }
 
 .team-image {
@@ -124,10 +123,7 @@ form button {
     background-position: center;
     width: 300px;
     height: 300px;
-    border-radius: 50%;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 0%;
 }
 
 /* Our Projects Section */
@@ -138,9 +134,15 @@ form button {
     text-align: center;
 }
 
-.projects h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.projects .content {
+    display: flex;
+    flex-direction: row-reverse; /* Change to row for alternating sides */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects-text {
+    width: 50%; /* Adjust as needed */
 }
 
 .video {
@@ -165,9 +167,24 @@ form button {
     text-align: center;
 }
 
-.socials h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.socials .content {
+    display: flex;
+    flex-direction: row; /* Change to row-reverse for alternating sides */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.socials-image {
+    background-image: url('socials-image.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 0%;
+}
+
+.socials-text {
+    width: 50%; /* Adjust as needed */
 }
 
 /* News Section */
@@ -178,10 +195,21 @@ form button {
     text-align: center;
 }
 
-.news h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.news .content {
+    display: flex;
+    flex-direction: row-reverse; /* Change to row for alternating sides */
+    align-items: center;
+    justify-content: space-between;
 }
+
+.news-text {
+    width: 50%; /* Adjust as needed */
+}
+
+.news-items {
+    /* Styles for news items */
+}
+
 
 /* Footer */
 footer {
@@ -203,7 +231,9 @@ footer {
     right: 20px;
     font-size: 2em;
     cursor: pointer;
+    display: ; /* Initially hidden */
 }
+
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
