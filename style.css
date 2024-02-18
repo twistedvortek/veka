@@ -89,7 +89,7 @@ form button {
 }
 
 .about-image {
-    background-image: url('about-image.jpg'); /* Replace with your image */
+    background-image: url('about-image.png'); /* Replace with your image */
     background-size: cover;
     background-position: center;
     width: 300px;
