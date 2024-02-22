@@ -12,3 +12,6 @@ window.onscroll = function() {
         document.querySelector('.scroll-to-top').style.display = 'none';
     }
 };
+
+// Add event listener for scroll-to-top button
+document.querySelector('.scroll-to-top').addEventListener('click', scrollToTop);
