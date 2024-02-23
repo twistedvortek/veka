@@ -1,252 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-    /* Reset styles */
-    body, h1, h2, p {
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 400;
-      line-height: 1.6;
-      background-color: #FFFFFF; /* Default to light mode */
-      color: #333333; /* Default text color */
-    }
-    body.dark-mode {
-      background-color: #1E1E1E;
-      color: #FFFFFF;
-    }
-    .ljmu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em;
-      background-color: #F2F2F2; /* Default to off-white */
-      color: #333333; /* Default header text color */
-    }
-    .ljmu-header button, .ljmu-header h1 {
-      font-family: 'Roboto', sans-serif;
-      font-weight: 700;
-      font-size: 1.2em;
-      color: #FFA500; /* Orange accent for Sayara text */
-    }
-    .ljmu-header button {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #FFA500; /* Orange accent for slider */
-      transition: .4s;
-      border-radius: 34px;
-    }
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: #FFFFFF;
-      transition: .4s;
-      border-radius: 50%;
-    }
-    input:checked + .slider {
-      background-color: #333333;
-    }
-    input:checked + .slider:before {
-      transform: translateX(26px);
-    }
-    .main-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 20px;
-    }
-    .section {
-      background-color: #F2F2F2; /* Default to off-white */
-      color: #333333; /* Default text color */
-      border-radius: 15px;
-      margin: 10px;
-      padding: 20px;
-      width: 300px;
-      text-align: center;
-    }
-    .placeholder {
-      width: 100%;
-      height: 0;
-      padding-bottom: 56%;
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 20px;
-      border-radius: 15px;
-    }
-    /* Add the new styles for stats */
-    .live-section, .weekly-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      border-radius: 15px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-    .stat {
-      width: 48%;
-      margin: 10px;
-      padding: 15px;
-      background-color: #FF8C00; /* Darker orange for stat boxes */
-      border-radius: 15px;
-      text-align: center;
-      color: #FFFFFF;
-    }
-    /* Add this to style the moving bar line */
-    .progress-bar-container {
-      width: 80%;
-      height: 20px;
-      background-color: #eee;
-      margin: 10px 0;
-      position: relative;
-      border-radius: 15px;
-    }
-    .progress-bar {
-      height: 100%;
-      background-color: #FFA500; /* Orange bar color */
-      width: 0;
-    }
-    .footer {
-      background-color: #F2F2F2; /* Default to off-white */
-      color: #333333; /* Default text color */
-      padding: 1rem;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      border-radius: 15px;
-    }
-    /* Dark mode styles */
-    body.dark-mode .ljmu-header {
-      background-color: #333333;
-      color: #FFFFFF;
-    }
-    body.dark-mode .section {
-      background-color: #333333;
-      color: #FFFFFF;
-    }
-    body.dark-mode .footer {
-      background-color: #333333;
-      color: #FFFFFF;
-    }
-  </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Reset styles */
+        body,
+        h1,
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background-color: #FFFFFF; /* Default to light mode */
+            color: #333333; /* Default text color */
+        }
+
+        body.dark-mode {
+            background-color: #1E1E1E;
+            color: #FFFFFF;
+        }
+
+        .ljmu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: #F2F2F2; /* Default to off-white */
+            color: #333333; /* Default header text color */
+        }
+
+        .ljmu-header button,
+        .ljmu-header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #FFA500; /* Orange accent for Sayara text */
+        }
+
+        .ljmu-header button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #FFA500; /* Orange accent for slider */
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: #FFFFFF;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #333333;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .section {
+            background-color: #F2F2F2; /* Default to off-white */
+            color: #333333; /* Default text color */
+            border-radius: 15px;
+            margin: 10px;
+            padding: 20px;
+            width: calc(33.33% - 20px); /* Adjusted width calculation */
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .placeholder {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            background-color: #FFECB3; /* Very light orange */
+        }
+
+        .placeholder iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 15px; /* Border-radius added to iframe */
+        }
+
+        /* Add the new styles for stats */
+        .live-section,
+        .weekly-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            width: calc(50% - 20px); /* Adjusted width calculation */
+            margin: 10px;
+            padding: 15px;
+            background-color: #FFECB3; /* Very light orange */
+            border-radius: 15px;
+            text-align: center;
+            color: #333333; /* Default text color in light mode */
+        }
+
+        body.dark-mode .stat {
+            background-color: #FFA500; /* Darker orange in dark mode */
+            color: #FFFFFF; /* White text in dark mode */
+        }
+
+        /* Add this to style the moving bar line */
+        .progress-bar-container {
+            width: 80%;
+            height: 20px;
+            background-color: #eee;
+            margin: 10px 0;
+            position: relative;
+            border-radius: 15px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #FFA500; /* Orange bar color */
+            width: 0;
+        }
+
+        .footer {
+            background-color: #F2F2F2; /* Default to off-white */
+            color: #333333; /* Default text color */
+            padding: 1rem;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        /* Dark mode styles */
+        body.dark-mode .ljmu-header {
+            background-color: #333333;
+            color: #FFFFFF;
+        }
+
+        body.dark-mode .section {
+            background-color: #333333;
+            color: #FFFFFF;
+        }
+
+        body.dark-mode .footer {
+            background-color: #333333;
+            color: #FFFFFF;
+        }
+    </style>
 </head>
+
 <body>
-  <header class="ljmu-header">
-    <button id="home-button">Home</button>
-    <h1>Sayara - Realtime Dashboard Stats</h1>
-    <div class="dark-mode-switch">
-      <label class="switch">
-        <input type="checkbox" id="dark-mode-toggle">
-        <span class="slider round"></span>
-      </label>
-    </div>
-  </header>
-
-  <main class="main-content">
-    <!-- Box for Front Camera -->
-    <section class="section">
-      <h2>Front Camera</h2>
-      <div class="placeholder">
-        <iframe src="https://giphy.com/embed/yoJC2HB0ArmYPslmAU" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      </div>
-    </section>
-
-    <!-- Box for Back Camera -->
-    <section class="section">
-      <h2>Back Camera</h2>
-      <div class="placeholder">
-        <iframe src="https://giphy.com/embed/SwuP4hyvh8vXr9dy83" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      </div>
-    </section>
-
-    <!-- Box for Interior Camera -->
-    <section class="section">
-      <h2>Interior Camera</h2>
-      <div class="placeholder">
-        <iframe src="https://giphy.com/embed/qQJ1xyQXVuVfW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      </div>
-    </section>
-
-    <!-- Live Stats Box -->
-    <section class="section live-section">
-      <h2>Live Stats</h2>
-      <div class="stat">
-        <p>Current Speed: <span id="current-speed">0</span> km/h</p>
-        <div class="progress-bar-container">
-          <div class="progress-bar" id="progress-bar"></div>
+    <header class="ljmu-header">
+        <button id="home-button">Home</button>
+        <h1>Sayara - Realtime Dashboard Stats</h1>
+        <div class="dark-mode-switch">
+            <label class="switch">
+                <input type="checkbox" id="dark-mode-toggle">
+                <span class="slider round"></span>
+            </label>
         </div>
-      </div>
-      <div class="stat">
-        <p>Current Duration of Travel: <span id="current-duration">0</span> mins</p>
-      </div>
-      <div class="stat">
-        <p>Driving Behaviour: <span id="driving-behaviour">Good</span></p>
-      </div>
-      <div class="stat">
-        <p>Current Traffic Level: <span id="current-traffic">0</span></p>
-        <div class="progress-bar-container">
-          <div class="progress-bar" id="traffic-progress-bar"></div>
-        </div>
-      </div>
-      <div class="stat">
-        <p>Current Location: <span id="current-location">Unknown</span></p>
-      </div>
-    </section>
+    </header>
 
-    <!-- Weekly Stats Box -->
-    <section class="section weekly-section">
-      <h2>Weekly Stats</h2>
-      <div class="stat">
-        <p>Current Speed: <span id="weekly-current-speed">0</span> km/h</p>
-      </div>
-      <div class="stat">
-        <p>Weekly Duration of Travel: <span id="weekly-current-duration">0</span> mins</p>
-      </div>
-      <div class="stat">
-        <p>Weekly Driving Behaviour: <span id="weekly-driving-behaviour">Good</span></p>
-      </div>
-      <div class="stat">
-        <p>Weekly Traffic Level: <span id="weekly-current-traffic">0</span></p>
-      </div>
-      <div class="stat">
-        <p>Weekly Location: <span id="weekly-current-location">Unknown</span></p>
-      </div>
-    </section>
-  </main>
+    <main class="main-content">
+        <!-- Placeholder for Front Camera -->
+        <section class="section">
+            <h2>Front Camera</h2>
+            <div class="placeholder">
+                <iframe src="https://giphy.com/embed/yoJC2HB0ArmYPslmAU" frameborder="0" class="giphy-embed"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
 
-  <footer class="footer">
-    <p>Made with ❤️ for Liverpool John Moores BSc Computer Science final year project. Copyright is of their respective owners.</p>
-  </footer>
+        <!-- Placeholder for Back Camera -->
+        <section class="section">
+            <h2>Back Camera</h2>
+            <div class="placeholder">
+                <iframe src="https://giphy.com/embed/SwuP4hyvh8vXr9dy83" frameborder="0" class="giphy-embed"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <!-- Placeholder for Interior Camera -->
+        <section class="section">
+            <h2>Interior Camera</h2>
+            <div class="placeholder">
+                <iframe src="https://giphy.com/embed/qQJ1xyQXVuVfW" frameborder="0" class="giphy-embed"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- Live Stats Box -->
+        <section class="section live-section">
+            <h2>Live Stats</h2>
+            <div class="stat">
+                <p>Current Speed: <span id="current-speed">0</span> km/h</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <p>Current Duration of Travel: <span id="current-duration">0</span> mins</p>
+            </div>
+            <div class="stat">
+                <p>Driving Behaviour: <span id="driving-behaviour">Good</span></p>
+            </div>
+            <div class="stat">
+                <p>Current Traffic Level: <span id="current-traffic">0</span></p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="traffic-progress-bar"></div>
+                </div>
+            </div>
+            <div class="stat">
+                <p>Current Location: <span id="current-location">Unknown</span></p>
+            </div>
+        </section>
+
+        <!-- Average Weekly Stats Box -->
+        <section class="section weekly-section">
+            <h2>Average Weekly Stats</h2>
+            <div class="stat">
+                <p>Average Speed: <span id="weekly-current-speed">0</span> km/h</p>
+            </div>
+            <div class="stat">
+                <p>Average Duration of Travel: <span id="weekly-current-duration">0</span> mins</p>
+            </div>
+            <div class="stat">
+                <p>Average Driving Behaviour: <span id="weekly-driving-behaviour">Good</span></p>
+            </div>
+            <div class="stat">
+                <p>Average Traffic Level: <span id="weekly-current-traffic">0</span></p>
+            </div>
+            <div class="stat">
+                <p>Average Location: <span id="weekly-current-location">Unknown</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Made with ❤️ for Liverpool John Moores University - BSc Computer Science Final year project. Copyright is of
+            their respective owners.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
