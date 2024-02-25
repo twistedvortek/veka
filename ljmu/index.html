@@ -108,7 +108,7 @@
             border-radius: 15px;
             margin: 10px;
             padding: 20px;
-            width: calc(33.33% - 20px); /* Adjusted width calculation */
+            width: calc(50% - 20px); /* Adjusted width calculation */
             text-align: center;
             box-sizing: border-box;
         }
@@ -142,6 +142,7 @@
             border-radius: 15px;
             overflow: hidden;
             margin-bottom: 20px;
+            width: 100%; /* Updated width to 100% */
         }
 
         .stat {
@@ -175,6 +176,20 @@
             width: 0;
         }
 
+        /* Updated styles for Google Maps */
+        .map-container {
+            width: 100%; /* Set width to 100% */
+            margin: 10px; /* Add margin for spacing */
+            border-radius: 15px; /* Border-radius for container */
+            height: 300px; /* Increase the height */
+        }
+
+        .map {
+            width: 100%; /* Set width to 100% */
+            height: 100%; /* Set height to 100% */
+            border-radius: 15px; /* Border-radius for map */
+        }
+
         .footer {
             background-color: #F2F2F2; /* Default to off-white */
             color: #333333; /* Default text color */
@@ -202,6 +217,7 @@
             background-color: #333333;
             color: #FFFFFF;
         }
+
     </style>
 </head>
 
@@ -261,13 +277,17 @@
                 <p>Driving Behaviour: <span id="driving-behaviour">Good</span></p>
             </div>
             <div class="stat">
-                <p>Current Traffic Level: <span id="current-traffic">0</span></p>
+                <p>Current Traffic Level: <span id="current-traffic">0%</span></p>
                 <div class="progress-bar-container">
                     <div class="progress-bar" id="traffic-progress-bar"></div>
                 </div>
             </div>
             <div class="stat">
                 <p>Current Location: <span id="current-location">Unknown</span></p>
+                <!-- Updated map container for live location -->
+                <div class="map-container">
+                    <div class="map" id="map"></div>
+                </div>
             </div>
         </section>
 
@@ -284,10 +304,14 @@
                 <p>Average Driving Behaviour: <span id="weekly-driving-behaviour">Good</span></p>
             </div>
             <div class="stat">
-                <p>Average Traffic Level: <span id="weekly-current-traffic">0</span></p>
+                <p>Average Traffic Level: <span id="weekly-current-traffic">0%</span></p>
             </div>
             <div class="stat">
                 <p>Average Location: <span id="weekly-current-location">Unknown</span></p>
+                <!-- Updated map container for weekly location -->
+                <div class="map-container">
+                    <div class="map" id="weekly-map"></div>
+                </div>
             </div>
         </section>
     </main>
@@ -297,6 +321,8 @@
             their respective owners.</p>
     </footer>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfwdYeq6fwypxD7THjICfM5hptjTmG9o4&callback=initMap"
+        async defer></script>
     <script src="script.js"></script>
 </body>
 

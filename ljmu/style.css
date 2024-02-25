@@ -1,4 +1,4 @@
-/* Reset styles*/
+/* Reset styles */
 body, h1, h2, p {
   margin: 0;
   padding: 0;
@@ -8,8 +8,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  background-color: #FFFFFF; /* Default to light mode*/
-  color: #333333; /* Default text color*/
+  background-color: #FFFFFF; /* Default to light mode */
+  color: #333333; /* Default text color */
 }
 
 body.dark-mode {
@@ -22,15 +22,15 @@ body.dark-mode {
   justify-content: space-between;
   align-items: center;
   padding: 1em;
-  background-color: #F2F2F2; /* Default to off-white*/
-  color: #333333; /* Default header text color*/
+  background-color: #F2F2F2; /* Default to off-white */
+  color: #333333; /* Default header text color */
 }
 
 .ljmu-header button, .ljmu-header h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1.2em;
-  color: #FFA500; /* Orange accent for Sayara text*/
+  color: #333333; /* Updated to black in light mode */
 }
 
 .ljmu-header button {
@@ -59,7 +59,7 @@ body.dark-mode {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #FFA500; /* Orange accent for slider*/
+  background-color: #FFA500; /* Orange accent for slider */
   transition: .4s;
   border-radius: 34px;
 }
@@ -102,11 +102,10 @@ input:checked + .slider:before {
   box-sizing: border-box;
 }
 
-
 .placeholder {
   width: 100%;
   height: 0;
-  padding-bottom: 56%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
   position: relative;
   overflow: hidden;
   margin-bottom: 20px;
@@ -114,12 +113,16 @@ input:checked + .slider:before {
   background-color: #FFECB3; /* Very light orange */
 }
 
-body.dark-mode .placeholder {
-  background-color: #FFA500; /* Darker orange in dark mode */
+.placeholder iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px; /* Border-radius added to iframe */
 }
 
-
-/* Add the new styles for stats*/
+/* Add the new styles for stats */
 .live-section, .weekly-section {
   display: flex;
   flex-wrap: wrap;
@@ -127,10 +130,11 @@ body.dark-mode .placeholder {
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 20px;
+  width: 100%; /* Updated width to 100% */
 }
 
 .stat {
-  width: 48%;
+  width: calc(50% - 20px); /* Adjusted width calculation */
   margin: 10px;
   padding: 15px;
   background-color: #FFECB3; /* Very light orange */
@@ -144,8 +148,7 @@ body.dark-mode .stat {
   color: #FFFFFF; /* White text in dark mode */
 }
 
-
-/* Add this to style the moving bar line*/
+/* Add this to style the moving bar line */
 .progress-bar-container {
   width: 80%;
   height: 20px;
@@ -157,13 +160,26 @@ body.dark-mode .stat {
 
 .progress-bar {
   height: 100%;
-  background-color: #FFA500; /* Orange bar color*/
+  background-color: #FFA500; /* Orange bar color */
   width: 0;
 }
 
+/* Updated styles for Google Maps */
+.map-container {
+  width: 100%; /* Set width to 100% */
+  margin: 10px; /* Add margin for spacing */
+  border-radius: 15px; /* Border-radius for container */
+}
+
+.map {
+  width: 100%; /* Set width to 100% */
+  height: 200px; /* Set a fixed height */
+  border-radius: 15px; /* Border-radius for map */
+}
+
 .footer {
-  background-color: #F2F2F2; /* Default to off-white*/
-  color: #333333; /* Default text color*/
+  background-color: #F2F2F2; /* Default to off-white */
+  color: #333333; /* Default text color */
   padding: 1rem;
   text-align: center;
   position: fixed;
@@ -173,7 +189,7 @@ body.dark-mode .stat {
   border-radius: 15px;
 }
 
-/* Dark mode styles*/
+/* Dark mode styles */
 body.dark-mode .ljmu-header {
   background-color: #333333;
   color: #FFFFFF;
