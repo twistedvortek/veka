@@ -102,6 +102,26 @@ input:checked + .slider:before {
   box-sizing: border-box;
 }
 
+/* .placeholder {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background-color: #FFECB3; 
+}
+
+.placeholder iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px; 
+} */
+
 .placeholder {
   width: 100%;
   height: 0;
@@ -121,6 +141,7 @@ input:checked + .slider:before {
   left: 0;
   border-radius: 15px; /* Border-radius added to iframe */
 }
+
 
 /* Add the new styles for stats */
 .live-section, .weekly-section {
