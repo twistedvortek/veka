@@ -188,7 +188,7 @@ function getRealTimeLocation() {
                 const lat = position.coords.latitude;
                 const lng = position.coords.longitude;
 
-                // Send this data to server using AJAX or WebSocket
+                // Send this data to your server using AJAX or WebSocket
                 // For now, update the map directly
                 updateMapLocation(lat, lng);
             },
@@ -200,3 +200,4 @@ function getRealTimeLocation() {
         console.error('Geolocation is not supported by this browser.');
     }
 }
+

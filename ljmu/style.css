@@ -71,7 +71,7 @@ body.dark-mode {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: #FFFFFF;
+  background-color: #1E1E1E;
   transition: .4s;
   border-radius: 50%;
 }
@@ -102,26 +102,6 @@ input:checked + .slider:before {
   box-sizing: border-box;
 }
 
-/* .placeholder {
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  background-color: #FFECB3; 
-}
-
-.placeholder iframe {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 15px; 
-} */
-
 .placeholder {
   width: 100%;
   height: 0;
@@ -142,8 +122,6 @@ input:checked + .slider:before {
   border-radius: 15px; /* Border-radius added to iframe */
 }
 
-
-/* Add the new styles for stats */
 .live-section, .weekly-section {
   display: flex;
   flex-wrap: wrap;
@@ -169,7 +147,6 @@ body.dark-mode .stat {
   color: #FFFFFF; /* White text in dark mode */
 }
 
-/* Add this to style the moving bar line */
 .progress-bar-container {
   width: 80%;
   height: 20px;
@@ -181,11 +158,10 @@ body.dark-mode .stat {
 
 .progress-bar {
   height: 100%;
-  background-color: #FFA500; /* Orange bar color */
+  background-color: #1cf28c; /* Orange bar color */
   width: 0;
 }
 
-/* Updated styles for Google Maps */
 .map-container {
   width: 100%; /* Set width to 100% */
   margin: 10px; /* Add margin for spacing */
@@ -210,9 +186,8 @@ body.dark-mode .stat {
   border-radius: 15px;
 }
 
-/* Dark mode styles */
 body.dark-mode .ljmu-header {
-  background-color: #333333;
+  background-color: #FFA500; /* Set your desired orange color */
   color: #FFFFFF;
 }
 
@@ -224,4 +199,8 @@ body.dark-mode .section {
 body.dark-mode .footer {
   background-color: #333333;
   color: #FFFFFF;
+}
+
+body.dark-mode .placeholder {
+  background-color: #FFA500; /* Set your desired orange color */
 }
