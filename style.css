@@ -1,267 +1,103 @@
-/* Reset styles*/
-body, h1, h2, p, form, input, button {
+/* Basic Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    background-color: #23272A; /* Discord's dark grey */
+    color: white;
     line-height: 1.6;
-    background-color: #1E1E1E; /* Dark background color*/
-    color: #FFFFFF; /* White text color*/
 }
 
-/* Global styles*/
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay*/
+a {
+    color: orange;
+    text-decoration: none;
 }
 
-/* Hero Section*/
-.hero {
-    position: relative;
+/* Loading Screen */
+#loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    background-color: #23272A;
+    color: white;
+    font-size: 2rem;
+}
+
+/* Main Content */
+#main-content {
+    display: none; /* Hidden by default; shown after loading */
+}
+
+/* Section Styling */
+section {
+    padding: 60px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.hero .content {
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-form input {
-    padding: 10px;
-    font-size: 1em;
-    margin-right: 10px;
-    border: none;
-    border-radius: 0px;
-    width: 100%; /* Added width */
-    box-sizing: border-box; /* Added box-sizing */
-}
-
-form button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #FFA500; /* Orange button color*/
-    color: #000000; /* Black text color*/
-    border: none;
-    border-radius: 0px;
-    cursor: pointer;
-    width: 100%; /* Added width */
-}
-
-/* About Us Section*/
-.about {
-    background-color: #333333; /* Dark gray background color*/
-    color: #FFFFFF; /* White text color*/
-    padding: 40px;
-    text-align: center;
-}
-
-.about .content {
-    display: flex;
-    flex-direction: row-reverse; /* Change to row for alternating sides*/
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
 }
 
-.about-text {
-    width: 50%; /* Adjust as needed*/
-}
-
-.about-image {
-    background-image: url('about-image.png'); /* Replace with your image*/
-    background-size: cover;
-    background-position: center;
-    width: 100%; /* Adjust as needed*/
+img {
+    max-width: 100%;
     height: auto;
-    border-radius: 0%;
 }
 
-/* Team Section*/
-.team {
-    background-color: #555555; /* Dark gray background color*/
-    color: #FFFFFF; /* White text color*/
-    padding: 40px;
-    text-align: center;
-}
-
-.team .content {
-    display: flex;
-    flex-direction: row; /* Change to row-reverse for alternating sides*/
-    align-items: center;
+/* About, Team, Projects, Socials Sections */
+#about .container, #team .container, #projects .container, #socials .container {
+    flex-direction: row;
     justify-content: space-between;
 }
 
-.team-text {
-    width: 50%; /* Adjust as needed*/
+#team .container, #socials .container {
+    flex-direction: row-reverse;
 }
 
-.team-image {
-    background-image: url('team-image.jpg'); /* Replace with your image*/
-    background-size: cover;
-    background-position: center;
-    width: 100%; /* Adjust as needed*/
-    height: auto;
-    border-radius: 0%;
+.section-text {
+    flex: 1;
+    margin: 20px;
 }
 
-/* Our Projects Section*/
-.projects {
-    background-color: #333333; /* Dark gray background color*/
-    color: #FFFFFF; /* White text color*/
-    padding: 40px;
-    text-align: center;
+/* News Section */
+#news .container {
+    flex-direction: column;
 }
 
-.projects .content {
-    display: flex;
-    flex-direction: row-reverse; /* Change to row for alternating sides*/
-    align-items: center;
-    justify-content: space-between;
-}
-
-.projects-text {
-    width: 50%; /* Adjust as needed*/
-}
-
-.video {
-    position: relative;
+.main-news, .other-news {
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio*/
-    margin-bottom: 40px;
 }
 
-.video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* Our Socials Section*/
-.socials {
-    background-color: #555555; /* Dark gray background color*/
-    color: #FFFFFF; /* White text color*/
-    padding: 40px;
-    text-align: center;
-}
-
-.socials .content {
-    display: flex;
-    flex-direction: row; /* Change to row-reverse for alternating sides*/
-    align-items: center;
-    justify-content: space-between;
-}
-
-.socials-image {
-    background-image: url('socials-image.jpg'); /* Replace with your image*/
-    background-size: cover;
-    background-position: center;
-    width: 100%; /* Adjust as needed*/
-    height: auto;
-    border-radius: 0%;
-}
-
-.socials-text {
-    width: 50%; /* Adjust as needed*/
-}
-
-/* News Section*/
-.news {
-    background-color: #333333; /* Dark gray background color*/
-    color: #FFFFFF; /* White text color*/
-    padding: 40px;
-    text-align: center;
-}
-
-.news .content {
-    display: flex;
-    flex-direction: row-reverse; /* Change to row for alternating sides*/
-    align-items: center;
-    justify-content: space-between;
-}
-
-.news-text {
-    width: 50%; /* Adjust as needed*/
-}
-
-.news-items {
-    /* Styles for news items*/
-}
-
-/* Footer*/
+/* Footer */
 footer {
-    background-color: #555555; /* Dark gray background color*/
-    color: #FFFFFF; /* White text color*/
+    background-color: #2C2F33; /* Slightly lighter grey */
+    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
 }
 
-/* Cookie Banner*/
-.cookie-banner {
-    /* Styles for cookie banner*/
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
 }
 
-/* Scroll-to-Top Button*/
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 2em;
-    cursor: pointer;
-    display: none; /* Initially hidden*/
-}
-
-/* Responsive styles*/
-@media screen and (max-width: 768px) {
-    .hero h1 {
-        font-size: 2em;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
     }
 
-    .hero p {
-        font-size: 1em;
-    }
-
-    .about-text,
-    .team-text,
-    .projects-text,
-    .socials-text,
-    .news-text {
-        width: 100%; /* Adjust as needed*/
-    }
-
-    .about-image,
-    .team-image,
-    .socials-image {
-        width: 100%; /* Adjust as needed*/
-    }
-
-    .video {
-        padding-bottom: 33.75%; /* 4:3 aspect ratio for mobile devices*/
+    footer .container {
+        grid-template-columns: 1fr;
     }
 }
