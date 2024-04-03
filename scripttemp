@@ -1,0 +1,36 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Dark/Light Mode Switch
+    const modeSwitch = document.getElementById('mode-switch');
+    modeSwitch.addEventListener('click', function() {
+        document.body.classList.toggle('light-mode');
+    });
+
+    // Loading Screen
+    const loadingScreen = document.getElementById('loading-screen');
+    setTimeout(() => {
+        loadingScreen.style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    }, 3000); // 3 seconds loading time
+
+    // Slider Functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const showSlide = (index) => {
+        slides.forEach((slide, idx) => {
+            slide.style.display = 'none';
+            if (idx === index) {
+                slide.style.display = 'block';
+            }
+        });
+    };
+    showSlide(currentSlide); // Show the first slide
+
+    // Function to go to the next slide
+    const nextSlide = () => {
+        currentSlide = (currentSlide + 1) % slides.length; // Loop back to first slide
+        showSlide(currentSlide);
+    };
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+});

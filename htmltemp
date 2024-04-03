@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEKA - Esports & Gaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">VEKA</div>
+    <div class="mode-switch">
+        <input type="checkbox" id="dark-light-toggle" class="checkbox">
+        <label for="dark-light-toggle" class="toggle-label"><span class="slider round"></span></label>
+    </div>
+</header>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <i class="fas fa-spinner fa-spin"></i>
+</div>
+
+<!-- Main Content -->
+<div id="main-content">
+
+    <!-- Hero Section -->
+    <section class="slider">
+        <div class="slide active">
+            <img src="tournament.jpg" alt="Tournament Management">
+            <div class="slide-text">
+                <h2>Tournament Management</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="slide active">
+            <img src="community.jpg" alt="Community Management">
+            <div class="slide-text">
+                <h2>community Management</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="slide active">
+            <img src="talent.jpg" alt="talent Management">
+            <div class="slide-text">
+                <h2>talent Management</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <!-- Additional slides -->
+    </section>
+
+    <!-- About Us Section -->
+    <section class="category-section" id="about">
+        <div class="text-content">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui placerat varius.</p>
+        </div>
+        <!-- Image or additional content -->
+    </section>
+
+    <!-- Team Section -->
+    <section class="category-section" id="team">
+        <div class="text-content">
+            <h2>Our Team</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <!-- Image or additional content -->
+    </section>
+
+    <!-- Our Projects Section -->
+    <section class="category-section" id="projects">
+        <div class="text-content">
+            <h2>Our Projects</h2>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <!-- Image or additional content -->
+    </section>
+
+    <!-- Our Socials Section -->
+    <section class="category-section" id="socials">
+        <!-- Social Icons and any other relevant content -->
+    </section>
+
+    <!-- News Section -->
+    <section class="category-section" id="news">
+        <div class="main-news">
+            <h2>Main Article Title</h2>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <div class="other-news">
+            <!-- Other news articles -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-column">
+            <a href="#">VEKA Logo</a>
+            <p>&copy; 2024 VEKA - All Rights Reserved</p>
+        </div>
+        <div class="footer-column">
+            <a href="#">Sitemap</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Legal</a>
+        </div>
+        <div class="footer-column">
+            <a href="about-subdomain">About</a>
+            <a href="#">Team</a>
+            <a href="#">Projects</a>
+        </div>
+        <div class="footer-column">
+            <a href="#">Partner</a>
+            <a href="#">Advertise</a>
+        </div>
+        <div class="footer-column social-footer">
+            <a href="https://twitter.com/vortekacademy"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://facebook.com/vortekacademy"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://instagram.com/vortekacademy"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -17,7 +17,7 @@ a {
     text-decoration: none;
 }
 
-/* Shared Styles */
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -31,6 +31,15 @@ header {
     font-size: 1.5rem;
 }
 
+.mode-switch {
+    background: none;
+    border: 1px solid orange;
+    color: orange;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Loading Screen */
 #loading-screen {
     display: flex;
     justify-content: center;
@@ -41,23 +50,27 @@ header {
     font-size: 2rem;
 }
 
+/* Main Content */
 #main-content {
-    display: block; /* Initially hidden; will be displayed after loading */
+    display: block; /* Change to block to make content visible after loading */
 }
 
+/* Slider */
 .slider {
     overflow: hidden;
 }
 
 .slide {
-    display: none; /* Initially hidden; controlled by JavaScript */
+    display: none; /* Hide slides by default, display with JavaScript */
     text-align: center;
 }
+
 /* First slide visible by default */
 .slide.active {
     display: block;
 }
 
+/* Category Sections & Diagonal Cuts */
 .category-section {
     display: flex;
     justify-content: space-between;
@@ -65,27 +78,52 @@ header {
     margin: 20px 0;
 }
 
+.diagonal-cut {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    width: 45%; /* Adjust based on design preference */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for diagonal images */
+.diagonal-cut:hover {
+    transform: scale(1.05);
+}
+
+/* Text Content within Sections */
 .text-content {
     width: 50%;
-    padding: 0 20px; /* Adjusted to add padding for text content */
 }
 
-.social-icons a, .social-icons-horizontal a, .social-icons-vertical a {
+/* Social Icons */
+.social-icons a {
+    color: white;
     margin: 0 10px;
-    color: white; /* Default color for icons; will be overridden in light mode */
 }
 
-.social-icons i, .social-icons-horizontal i, .social-icons-vertical i {
+.social-icons i {
     font-size: 24px;
-
 }
 
-.main-news, .other-news .article {
+/* News Section */
+.main-news {
+    width: 60%;
+    margin-right: 20px;
+}
+
+.other-news {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.article {
     background: #333;
     padding: 10px;
     margin-bottom: 10px;
 }
 
+/* Footer */
 footer {
     display: flex;
     justify-content: space-around;
@@ -101,11 +139,11 @@ footer {
 }
 
 .footer-column a, .footer-column p, .footer-column address {
-    margin-bottom: 3px;
+    margin-bottom: 10px;
     display: block;
 }
 
-/* Responsive Design Adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
     header, .text-content, .footer-column {
         text-align: center;
@@ -120,49 +158,4 @@ footer {
         width: 100%;
     }
 }
-
-/* Dark Mode Specific Styles (Default) */
-body {
-    background-color: #23272A; /* Discord's dark grey */
-    color: white;
-}
-
-header {
-    background-color: #1E1E1E; /* Slightly darker shade for the header */
-}
-
-.mode-switch {
-    background: none;
-    border: 1px solid orange;
-    color: orange;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.diagonal-cut {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-    width: 45%; /* Adjust based on design preference */
-    transition: transform 0.3s ease;
-}
-
-.diagonal-cut:hover {
-    transform: scale(1.05);
-}
-
-/* Light Mode Specific Styles */
-body.light-mode {
-    background-color: #f4f4f4; /* Light background */
-    color: #333; /* Dark text for better contrast */
-}
-
-body.light-mode a {
-    color: #0056b3; /* Light mode link color */
-}
-
-body.light-mode header {
-    background-color: #ddd; /* Lighter header background */
-}
-
-body.light-mode .social-icons a, body.light-mode .social-icons-horizontal a, body.light-mode .social-icons-vertical a {
-    color: #333; /* Dark icon color for light mode */
-}
+    
