@@ -1,3 +1,5 @@
+html
+Copy code
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body class="dark-mode"> <!-- Initial dark mode, can be toggled -->
 
@@ -21,31 +21,36 @@
 <header>
     <div class="logo">VEKA</div>
     <nav class="navbar">
-        <button class="live-btn flash">Live Now</button>
-        <a href="#live" class="nav-link">Live</a>
+        <a href="#live" class="nav-link flash">Live 🔴</a> <!-- 'Live' now flashes instead of 'Live Now' -->
         <a href="#about" class="nav-link">About</a>
         <a href="#team" class="nav-link">Team</a>
         <a href="#news" class="nav-link">News</a>
         <div class="dropdown language-dropdown">
-            <button class="dropbtn"><img src="flags/uk.png" alt="English"> English</button>
+            <button class="dropbtn">🇬🇧 English</button> <!-- Changed to emoji flags -->
             <div class="dropdown-content">
-                <a href="#"><img src="flags/uae.png" alt="Arabic"> Arabic</a>
-                <a href="#"><img src="flags/in.png" alt="Hindi"> Hindi</a>
-                <a href="#"><img src="flags/pk.png" alt="Urdu"> Urdu</a>
-                <a href="#"><img src="flags/fr.png" alt="French"> French</a>
-                <a href="#"><img src="flags/es.png" alt="Spanish"> Spanish</a>
+                <a href="#">🇦🇪 Arabic</a>
+                <a href="#">🇮🇳 Hindi</a>
+                <a href="#">🇵🇰 Urdu</a>
+                <a href="#">🇫🇷 French</a>
+                <a href="#">🇪🇸 Spanish</a>
                 <a href="#" style="font-style: italic;">More Coming Soon</a>
             </div>
         </div>
-        <button class="theme-toggle-btn"><ion-icon name="moon"></ion-icon></button>
+        <button class="theme-toggle-btn" data-mode="dark"><ion-icon name="moon"></ion-icon> Dark Mode</button> <!-- Added text for mode -->
     </nav>
 </header>
+
+<!-- Loading Screen -->
+<div id="loading-screen" style="display: flex; justify-content: center; align-items: center; height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; background: rgba(0, 0, 0, .8); z-index: 9999;">
+    <i class="fas fa-spinner fa-spin" style="font-size: 3rem; color: white;"></i>
+</div>
+
 
     <!-- Main Content Area -->
     <main class="main-content">
         
     <!-- Hero Section -->
-    <section class="hero" style="background-image: url('hero-background.jpg');">
+    <section class="hero" style="background-image: url('community.jpg');">
         <div class="hero-content">
             <h1>Create, Manage, and Experience <span>Esports</span> Like Never Before</h1>
             <p>Join the ultimate platform for competitive gaming, tournament management, and community building.</p>
@@ -65,8 +70,8 @@
     
         <!-- Other Streaming Links -->
         <div style="width: 49%;">
-            <a href="https://www.twitch.tv/twistedvortek">TwistedVortek</a>
-            <a href="https://www.twitch.tv/aplesports">ApleSports</a>
+            <a href="https://www.twitch.tv/twistedvortek">TwistedVorteK</a>
+            <a href="https://www.twitch.tv/aplesports">APLEsports</a>
             <a href="https://www.twitch.tv/darkriftesports">DarkRiftEsports</a>
         </div>
     </section>
@@ -84,20 +89,25 @@
     </div>
 </section>
 
-
-<!-- Team Section -->
-<section id="team" class="category-section">
-    <div class="text-content">
-        <h2>Meet Our Team</h2>
-        <p>Our team of gaming enthusiasts and industry veterans work tirelessly to make VEKA the go-to destination for esports.</p>
-    </div>
-</section>
-
 <!-- Our Projects Section -->
 <section id="projects" class="category-section">
+    <div class="image-content">
+        <img src="project.jpg" alt="Our Projects" style="width: 50%; height: 300px; object-fit: cover; clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);">
+    </div>
     <div class="text-content">
         <h2>Our Projects</h2>
         <p>From groundbreaking tournament software to immersive fan experiences, discover the innovative projects we've brought to life.</p>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="category-section">
+    <div class="image-content">
+        <img src="team.jpg" alt="Our Team" style="width: 50%; height: 300px; object-fit: cover; clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);">
+    </div>
+    <div class="text-content">
+        <h2>Meet Our Team</h2>
+        <p>Our team of gaming enthusiasts and industry veterans work tirelessly to make VEKA the go-to destination for esports.</p>
     </div>
 </section>
 
@@ -111,7 +121,7 @@
     <div class="social-icons">
         <a href="https://twitter.com/vortekacademy"><i class="fab fa-twitter"></i> /vortekacademy</a>
         <a href="https://facebook.com/vortekacademy"><i class="fab fa-facebook"></i> /vortekacademy</a>
-        <a href="https://instagram.com/vortekacademy"><i class="fab fa-instagram"></i> /vortekacademy</a>>
+        <a href="https://instagram.com/vortekacademy"><i class="fab fa-instagram"></i> /vortekacademy</a>
         <!-- Add more social links as needed -->
     </div>    
 </section>
@@ -121,27 +131,27 @@
     <h2>Latest Esports News</h2>
     <div class="news-articles">
         <article class="news-item">
-            <img src="news-1.jpg" alt="Esports Championship">
+            <img src="news1.jpg" height="25%" width="25%" alt="Esports Championship">
             <div class="news-content">
                 <h3>Global Esports Championship Concludes with Record Viewership</h3>
                 <p>This year's championship not only shattered previous records but also set a new standard for esports competitions worldwide.</p>
-                <a href="news-detail.html" class="btn">Read More</a>
+                <a href="news1.html" class="btn">Read More</a>
             </div>
         </article>
         <article class="news-item">
-            <img src="news-2.jpg" alt="New Gaming Arena">
+            <img src="news2.jpg" height="25%" width="25%" alt="New Gaming Arena">
             <div class="news-content">
                 <h3>New State-of-the-Art Gaming Arena Opens</h3>
                 <p>The newly opened arena promises to be a haven for gamers, with the latest technology and facilities.</p>
-                <a href="news-detail.html" class="btn">Read More</a>
+                <a href="news2.html" class="btn">Read More</a>
             </div>
         </article>
         <article class="news-item">
-            <img src="news-3.jpg" alt="Esports Scholarship Program">
+            <img src="news3.jpg" height="25%" width="25%" alt="Esports Scholarship Program">
             <div class="news-content">
                 <h3>University Launches Esports Scholarship Program</h3>
                 <p>In a groundbreaking move, the university now offers scholarships to top esports athletes, recognizing esports as a competitive discipline.</p>
-                <a href="news-detail.html" class="btn">Read More</a>
+                <a href="news3.html" class="btn">Read More</a>
             </div>
         </article>
     </div>
@@ -150,24 +160,29 @@
 <!-- Newsletter Section -->
 <section class="newsletter">
     <div class="newsletter-signup">
+        <form>
+            <input type="email" placeholder="Your email address">
+            <button type="submit">Subscribe</button>
+        </form>
         <h2>Join Our Newsletter</h2>
         <p>Subscribe to get the latest esports news, updates, and special offers directly to your inbox.</p>
         <!-- Subscription form -->
     </div>
 </section>
 
-<!-- Footer -->
 <footer>
     <div class="footer-content">
         <div class="footer-column">
             <h3>About VEKA</h3>
-            <p>Discover the story behind VEKA, your ultimate esports platform.</p>
+            <p>Discover the story behind <b>VEKA</b>, your ultimate esports platform.</p>
         </div>
         <div class="footer-column">
             <h3>Quick Links</h3>
-            <a href="#live">Live Matches</a>
-            <a href="#about">About Us</a>
-            <a href="#team">Our Team</a>
+                <a href="#live">Live Matches</a>
+                <a href="#about">About Us</a>
+                <a href="#team">Our Team</a>
+                <a href="#projects">Projects</a>
+                <a href="#news">News</a>
         </div>
         <div class="footer-column">
             <h3>Explore</h3>
@@ -176,21 +191,24 @@
         </div>
         <div class="footer-column">
             <h3>Follow Us</h3>
-            <!-- Include social icons and links as shown in the previous section -->
+            <div class="social-icons">
+                <a href="https://twitter.com/vortekacademy" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://facebook.com/vortekacademy" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="https://instagram.com/vortekacademy" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
         </div>
-        <div class="footer-column newsletter">
-            <h3>Newsletter</h3>
-            <p>Subscribe to our newsletter for the latest updates.</p>
-            <form>
-                <input type="email" placeholder="Your email address">
-                <button type="submit">Subscribe</button>
-            </form>
+        <div class="footer-column">
+            <h3>Visit Us</h3>
+            <address>
+                Burj Khalifa, 1 Sheikh Mohammed bin Rashid Blvd, Dubai, United Arab Emirates
+            </address>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 VEKA - All Rights Reserved</p>
+        <p>&copy;2024 VEKA LLC - All Rights Reserved</p>
     </div>
 </footer>
+
 
 <script src="script.js"></script>
 </body>

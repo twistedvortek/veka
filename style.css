@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border-radius: 10px; /* Globally rounded corners for consistency */
 }
 
 body {
@@ -28,16 +27,26 @@ header {
     top: 0;
     width: 100%;
     background-color: #1E1E1E; /* Adjust according to your color scheme */
-    z-index: 1000; /* Ensures the header is above other content */
+    z-index: 10; /* Ensures the header is above other content */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Adjust padding as needed */
-    border-bottom-left-radius: 0; /* Remove rounded corners for the top */
-    border-bottom-right-radius: 0;
+    padding: 20px 50px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
-.logo, .nav-link, .live-btn, .dropdown, .theme-toggle-btn {
+.logo, .nav-link, .dropdown, .theme-toggle-btn {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white; /* Ensure high contrast and readability */
+    padding: 5px 10px;
+}
+
+/* Flashing 'Live' Button */
+.live-btn {
+    animation: flashing 2s infinite;
+    color: red !important; /* Make font red regardless of theme */
     font-weight: 700;
     font-size: 1.2rem;
     color: white; /* Ensure high contrast and readability */
@@ -50,13 +59,40 @@ header {
     gap: 10px; /* Adjust the gap as needed */
 }
 
-/* Flashing 'Live Now' Button */
-@keyframes flashing {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
+/* Live Button Flashing */
 .flash {
-    animation: flashing 2s infinite;
+    animation: flashAnimation 2s infinite;
+    color: red; /* Red color regardless of the theme */
+}
+
+@keyframes flashAnimation {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+/* Language Dropdown Adjustments */
+.language-dropdown .dropbtn {
+    display: flex;
+    align-items: center;
+    background-color: #333; /* Ensure visibility */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white; /* Ensure high contrast and readability */
+    padding: 5px 10px;
+}
+
+/* Language Dropdown - Using Emojis for Flags */
+.dropbtn::before {
+    content: '';
+    display: inline-block;
+    margin-right: 8px;
 }
 
 /* Language flags fix */
@@ -72,14 +108,20 @@ header {
     border-radius: 20px;
 }
 
-/* Modes button text addition */
+/* Mode Switch Button */
 .theme-toggle-btn {
     display: flex;
     align-items: center;
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
 }
-.theme-toggle-btn::before {
-    content: attr(data-mode) " mode";
-    margin-right: 8px;
+
+.theme-toggle-btn[data-mode="dark"]::before,
+.theme-toggle-btn[data-mode="light"]::before {
+    content: attr(data-mode) " Mode";
+    margin-right: 10px;
 }
 
 .dropdown-content {
@@ -111,13 +153,23 @@ header {
     box-sizing: border-box;
 }
 
-/* Hero section visibility */
+/* Hero Section with Text Box */
 .hero {
-    width: 100%;
+    position: relative;
+    height: 900px;
+    background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    text-align: center;
+    padding: 0 50px 50px;
+    margin-bottom: 50px; /* Increased distance */
+}
+
+.hero .hero-content {
+    max-width: 600px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 /* Hero Slider Improvements */
@@ -144,6 +196,7 @@ header {
 #live-match {
     justify-content: center;
     gap: 20px; /* Adds some space between the twitch player and the links */
+    margin-bottom: 50px; /* Increased distance */
 }
 
 /* Correcting the layout for About Us, Team, Projects, and Socials */
@@ -152,6 +205,10 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+    margin-bottom: 50px; /* Increased distance */
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 /* Newsletter email field addition */
@@ -192,6 +249,19 @@ footer {
     box-sizing: border-box;
 }
 
+/* Vertical Stacking for Footer Links */
+.footer-column a {
+    display: block; /* Stack links vertically */
+}
+
+/* Footer Adjustments */
+.footer-bottom {
+    text-align: right;
+    width: 100%;
+    font-style: italic;
+    padding-right: 50px; /* Moves text away from the left */
+}
+
 /* Newsletter Section Enhancement */
 .newsletter {
     background-color: #1E1E1E;
@@ -202,25 +272,42 @@ footer {
     margin: 20px 0; /* Add space around the newsletter section */
 }
 
-.newsletter input[type="email"], .newsletter button {
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
+/* Newsletter Section Email Input Field */
+.newsletter input[type="email"] {
+    width: 100%; /* Prevent extending outside the box */
+    margin: 0; /* Adjust margin */
+    padding: 10px; /* Consistent padding */
 }
 
 .newsletter button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
     background-color: orange;
     border: none;
 }
 
 /* Responsive Design Adjustments */
 @media (max-width: 768px) {
-    header, .navbar {
+    .navbar {
         flex-direction: column;
+    }
+
+    .hero {
+        height: auto;
+        padding: 20px;
+    }
+
+    .hero .hero-content {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 20px;
     }
 
     .footer-column {
         width: 100%; /* Adjust footer columns to stack on smaller screens */
-        margin: 10px 0;
     }
 }
