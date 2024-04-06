@@ -1,78 +1,97 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Dark/Light Mode Toggle
-    const toggle = document.getElementById('dark-light-toggle');
-    toggle.addEventListener('change', function() {
-        if (this.checked) {
-            document.body.classList.add('light-mode');
+    const modeToggle = document.querySelector('.theme-toggle-btn');
+    modeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('light-mode');
+        // Update icon based on mode
+        const icon = this.querySelector('ion-icon');
+        if (document.body.classList.contains('light-mode')) {
+            icon.name = 'sunny';
         } else {
-            document.body.classList.remove('light-mode');
+            icon.name = 'moon';
         }
     });
 
-    // Manage Loading Screen Visibility
-    const loadingScreen = document.getElementById('loading-screen');
-    setTimeout(() => {
-        loadingScreen.style.display = 'none';
-        document.getElementById('main-content').style.display = 'block';
-    }, 3000); // Adjust the loading time as needed
-
-    // Slider Functionality for Hero Section
+    // Initialize Hero Slider
     let currentSlideIndex = 0;
-    const slides = document.querySelectorAll('.slider .slide');
-    function showSlide(index) {
-        slides.forEach((slide, idx) => {
-            slide.style.display = idx === index ? 'block' : 'none';
-        });
-    }
-
-    // Initially display the first slide
-    showSlide(currentSlideIndex);
-
-    // Function to go to the next slide
-    function nextSlide() {
+    const slides = document.querySelectorAll('.hero-slider .slide');
+    const nextSlide = () => {
+        slides[currentSlideIndex].classList.remove('active');
         currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-        showSlide(currentSlideIndex);
-    }
+        slides[currentSlideIndex].classList.add('active');
+    };
 
-    // Auto-slide functionality
-    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
 
-    // Adjustments for News Section in Light Mode
-    function adjustNewsSizeForLightMode() {
-        const mainNews = document.querySelector('.main-news');
-        const otherNews = document.querySelectorAll('.other-news .article');
-        if (document.body.classList.contains('light-mode')) {
-            mainNews.style.fontSize = '1.2rem'; // Making text bigger in light mode
-            otherNews.forEach(article => {
-                article.style.fontSize = '1.1rem'; // Making text bigger in light mode
-            });
+    // Persistent Header Adjustment
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
         } else {
-            // Reset to default sizes when switching back to dark mode
-            mainNews.style.fontSize = ''; // Reset to CSS-defined size
-            otherNews.forEach(article => {
-                article.style.fontSize = ''; // Reset to CSS-defined size
-            });
+            header.classList.remove('scrolled');
         }
-    }
+    });
 
-    // Listen for changes in mode to adjust news section sizes accordingly
-    toggle.addEventListener('change', adjustNewsSizeForLightMode);
+    // Language Dropdown Toggle
+    const languageDropdown = document.querySelector('.language-dropdown .dropbtn');
+    languageDropdown.addEventListener('click', function() {
+        this.nextElementSibling.classList.toggle('show');
+    });
 
-    // Adjust footer column layout for responsiveness
-    function adjustFooterColumns() {
-        const footerColumns = document.querySelectorAll('footer .footer-column:not(:first-child)');
-        if (window.innerWidth < 768) {
-            footerColumns.forEach(column => {
-                column.style.flexDirection = 'column';
-            });
-        } else {
-            footerColumns.forEach(column => {
-                column.style.flexDirection = 'row';
-            });
+    // Click Event to Close Dropdowns if Clicked Outside
+    window.addEventListener('click', function(e) {
+        if (!e.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
         }
-    }
+    });
+// Example functionality for Twitch Embeds - Adjust as necessary
+// This assumes you have an element with the id 'twitch-embed' for the Twitch iframe
+const twitchEmbed = document.getElementById('twitch-embed');
+if (twitchEmbed) {
+    const channels = ["votekacademy", "twistedvortek", "aplesports", "darkriftesports"];
+    // This example could switch the Twitch channel based on some interaction, e.g., clicking a channel name
+    document.querySelectorAll('.channel-name').forEach(item => {
+        item.addEventListener('click', event => {
+            const channelName = event.target.getAttribute('data-channel');
+            if (channels.includes(channelName)) {
+                twitchEmbed.src = `https://player.twitch.tv/?channel=${channelName}&parent=yourdomain.com&muted=true`;
+            }
+        });
+    });
+}
 
-    // Call on initial load and on window resize
-    adjustFooterColumns();
-    window.addEventListener('resize', adjustFooterColumns);
+// Add event listeners for any other interactive elements
+// For example, handling clicks on news articles, toggling sections, etc.
+
+// Persistent Header Scroll
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 100) {
+        header.classList.add('is-scrolling');
+    } else {
+        header.classList.remove('is-scrolling');
+    }
 });
+
+// Light/Dark Mode Toggle
+const modeSwitch = document.querySelector('.mode-switch input[type="checkbox"]');
+modeSwitch.addEventListener('change', () => {
+    if (modeSwitch.checked) {
+        document.body.setAttribute('data-theme', 'light');
+    } else {
+        document.body.setAttribute('data-theme', 'dark');
+    }
+});
+
+// Initialize any sliders, modals, or interactive components here
+
+// Remember to adapt the code based on the actual structure and IDs/classes of your HTML elements.
+// This script assumes certain IDs and classes are in place based on the previous context provided.

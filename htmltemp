@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta viewport="width=device-width, initial-scale=1.0">
     <title>VEKA - Esports & Gaming</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -13,10 +14,10 @@
 <!-- Header -->
 <header>
     <div class="logo">VEKA</div>
-    <div class="mode-switch">
+    <label class="mode-switch">
         <input type="checkbox" id="dark-light-toggle" class="checkbox">
         <label for="dark-light-toggle" class="toggle-label"><span class="slider round"></span></label>
-    </div>
+    </label>
 </header>
 
 <!-- Loading Screen -->
@@ -25,12 +26,12 @@
 </div>
 
 <!-- Main Content -->
-<div id="main-content">
+<div id="main-content" style="display:none;">
 
     <!-- Hero Section -->
     <section class="slider">
         <div class="slide active">
-            <img src="tournament.jpg" alt="Tournament Management">
+            <img src="tournament.png" alt="Tournament Management">
             <div class="slide-text">
                 <h2>Tournament Management</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -44,59 +45,80 @@
             </div>
         </div>
         <div class="slide active">
-            <img src="talent.jpg" alt="talent Management">
+            <img src="talent.png" alt="talent Management">
             <div class="slide-text">
                 <h2>talent Management</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
         <!-- Additional slides -->
-    </section>
+    </section>    
 
     <!-- About Us Section -->
-    <section class="category-section" id="about">
+    <section id="about" class="category-section">
         <div class="text-content">
             <h2>About Us</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui placerat varius.</p>
+            <a href="about-subdomain">More About Us</a>
         </div>
-        <!-- Image or additional content -->
+        <img src="about.jpg" alt="About Us" class="diagonal-cut">
     </section>
 
     <!-- Team Section -->
-    <section class="category-section" id="team">
+    <section id="team" class="category-section">
+        <img src="team.jpg" alt="Our Team" class="diagonal-cut">
         <div class="text-content">
             <h2>Our Team</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a href="#" class="read-more">Read More</a>
         </div>
-        <!-- Image or additional content -->
     </section>
 
     <!-- Our Projects Section -->
-    <section class="category-section" id="projects">
+    <section id="projects" class="category-section">
         <div class="text-content">
             <h2>Our Projects</h2>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <a href="#" class="read-more">Read More</a>
         </div>
-        <!-- Image or additional content -->
+        <img src="project.jpg" alt="Our Projects" class="diagonal-cut">
     </section>
 
     <!-- Our Socials Section -->
-    <section class="category-section" id="socials">
-        <!-- Social Icons and any other relevant content -->
+    <section id="socials" class="category-section">
+        <div class="text-content">
+            <h2>Our Socials</h2>
+            <p>Connect with us on social media.</p>
+        </div>
+        <div class="social-icons-horizontal">
+            <a href="https://twitter.com/vortekacademy" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="https://facebook.com/vortekacademy" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://instagram.com/vortekacademy" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
     </section>
 
     <!-- News Section -->
-    <section class="category-section" id="news">
+    <section id="news" class="category-section">
         <div class="main-news">
             <h2>Main Article Title</h2>
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <a href="#" class="read-more">Read More</a>
+            <a href="main-article">Read More</a>
         </div>
         <div class="other-news">
-            <!-- Other news articles -->
-        </div>
+            <div class="article">
+                <h3>Article Title 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui placerat varius.</p>
+                <a href="article-link">Read More</a>
+            </div>
+            <div class="article">
+                <h3>Article Title 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui placerat varius.</p>
+                <a href="article-link">Read More</a>
+            </div>
+            <div class="article">
+                <h3>Article Title 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae risus nec dui placerat varius.</p>
+                <a href="article-link">Read More</a>
+            </div>
+        </div>        
     </section>
 
     <!-- Footer -->
@@ -119,12 +141,24 @@
             <a href="#">Partner</a>
             <a href="#">Advertise</a>
         </div>
-        <div class="footer-column social-footer">
-            <a href="https://twitter.com/vortekacademy"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="https://facebook.com/vortekacademy"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://instagram.com/vortekacademy"><i class="fab fa-instagram"></i> Instagram</a>
+        <div class="footer-column">
+            <address>
+                Burj Khalifa, 1 Sheikh Mohammed bin Rashid Blvd, Dubai, United Arab Emirates
+            </address>
+        <div class="footer-column">
+            <div class="social-icons">
+                <a href="https://twitter.com/vortekacademy" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://facebook.com/vortekacademy" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/vortekacademy" target="_blank"><i class="fab fa-instagram"></i></a>
+                <!-- Additional icons as needed -->
+            </div>
+        </div>
+            
+            </div>
         </div>
     </footer>
+
+</div>
 
 <script src="script.js"></script>
 </body>
