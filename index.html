@@ -36,7 +36,10 @@ Copy code
                 <a href="#" style="font-style: italic;">More Coming Soon</a>
             </div>
         </div>
-        <button class="theme-toggle-btn" data-mode="dark"><ion-icon name="moon"></ion-icon> Dark Mode</button> <!-- Added text for mode -->
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>        
     </nav>
 </header>
 
@@ -61,23 +64,21 @@ Copy code
     <!-- Live Match and Teams Represented Section -->
     <section id="live-match" style="display: flex; justify-content: space-between; align-items: flex-start;">
         <!-- Twitch Player -->
+        <iframe src="https://player.twitch.tv/?channel=vortekacademy?parent=veka.gg&muted=true&autoplay=true" frameborder="0" allowfullscreen="true" scrolling="no" height="300" width="80%"></iframe>
         <iframe
-            src="https://player.twitch.tv/?channel=votekacademy&parent=yourdomain.com&muted=true"
-            height="300"
-            width="49%"
-            allowfullscreen>
+        id="chat_embed"
+        src="https://www.twitch.tv/embed/vortekacademy/chat?parent=veka.gg"
+        height="300"e
+        width="350">
         </iframe>
-    
         <!-- Other Streaming Links -->
-        <div style="width: 49%;">
+        <div style="width: 20%;">
             <a href="https://www.twitch.tv/twistedvortek">TwistedVorteK</a>
             <a href="https://www.twitch.tv/aplesports">APLEsports</a>
             <a href="https://www.twitch.tv/darkriftesports">DarkRiftEsports</a>
         </div>
     </section>
     
-    
-
 <!-- About Us Section -->
 <section class="category-section" id="about">
     <div class="image-content" style="flex: 1;">

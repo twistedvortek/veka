@@ -27,3 +27,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 });
+
+function updateResults(data) {
+    const resultsSection = document.getElementById('results');
+    resultsSection.innerHTML = ''; // Clear previous results
+    data.objects.forEach(obj => {
+        const div = document.createElement('div');
+        div.textContent = `Detected: ${obj.type} at ${obj.location}`;
+        resultsSection.appendChild(div);
+    });
+}

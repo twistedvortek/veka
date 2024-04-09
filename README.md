@@ -42,7 +42,7 @@ Contributions to VEKA are greatly appreciated. Here is where we acknowledge thos
 
 | Contributor | Date       | Contribution         |
 |-------------|------------|----------------------|
-| Akku        | 2024-04-07 | Introducing Basics   |
+| You         | 2024-04-07 | Introducing Basics   |
 
 *More names and contributions will be added here.*
 
@@ -94,7 +94,7 @@ To deploy Sayara locally or on your server, follow these steps:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourgithubusername/sayara.git
+   git clone https://github.com/twistedvortek/veka/ljmu.git
    cd sayara
    ```
 

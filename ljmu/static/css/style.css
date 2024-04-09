@@ -214,6 +214,73 @@ input:checked + .slider:before {
     line-height: 1.4; /* Adjust line height for readability */
 }
 
+/* Upload Box Styling */
+..upload-section {
+    text-align: center;
+    padding: 20px;
+    margin: 30px auto;
+    border: 2px dashed #333;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+  }
+
+  .upload-container {
+    margin-bottom: 20px; /* Space between upload buttons and video display */
+}
+  
+  .upload-section h2 {
+    margin-bottom: 20px;
+  }
+  
+  .file-choose-button, .upload-button {
+    background-color: #FFA500; /* Orange background for consistency with slider */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px; /* Space between buttons */
+}
+  
+  /* Video Section Styling */
+  .video-section {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+  }
+  
+  .video-section h2 {
+    margin: 20px 0;
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .video-block {
+    flex-basis: 45%; /* Adjust this value as needed for side by side display */
+    margin: 10px 0;
+  }
+  
+  .video-block iframe {
+    width: 100%;
+    height: 335px; /* Adjust based on aspect ratio */
+    border-radius: 10px;
+  }
+  .videos-display {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px; /* Spacing after the upload section */
+  }
+ 
 @media (max-width: 768px) {
     .app-explanations-container {
         flex-direction: column;
@@ -226,4 +293,11 @@ input:checked + .slider:before {
         margin: 10px 0; /* Adjusted margin for smaller screens */
     }
 
+    .video-block {
+        flex-basis: 100%; /* Full width on smaller screens */
+      }
+    
+    .upload-section, .video-section {
+        width: 90%;
+      }
 }

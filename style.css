@@ -54,9 +54,14 @@ header {
 }
 
 .navbar {
-    display: flex;
+    display: none; /* Hide initially */
+    flex-direction: column;
     align-items: center;
-    gap: 10px; /* Adjust the gap as needed */
+    gap: 0; /* Reset gap */
+}
+
+.nav-toggle {
+    display: none; /* Hide toggle button initially */
 }
 
 /* Live Button Flashing */
@@ -124,6 +129,53 @@ header {
     margin-right: 10px;
 }
 
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input { 
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -148,8 +200,8 @@ header {
 /* Adjustments for main content area layout */
 .main-content {
     width: 100%;
-    max-width: 1200px; /* Match this with navbar's max-width for consistency */
     padding: 20px;
+    margin: 0 auto; /* Centers the content */
     box-sizing: border-box;
 }
 
@@ -204,12 +256,38 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
     margin-bottom: 50px; /* Increased distance */
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
+    
 }
+
+.text-content {
+    padding-left: 1px; /* Reduces space to the left of the text. Adjust as necessary */
+}
+
+
+.news-item {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment */
+    margin-bottom: 20px; /* Adds space between news items */
+}
+
+.news-item img {
+    width: 25%; /* Adjust width as needed */
+    border-radius: 10px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.news-content {
+    padding-left: 20px; /* Adds some space between the image and the text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the text next to the image */
+}
+
 
 /* Newsletter email field addition */
 .newsletter-signup form {
@@ -230,17 +308,18 @@ footer {
     background-color: #2C2F33;
     color: white;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
+    /* margin-top: auto; */
 }
 
 /* Footer layout adjustments */
 .footer-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; 
     width: 100%;
-    max-width: 1200px; /* Match this with navbar's max-width for consistency */
+    margin-top: auto; /* Push footer to bottom */
 }
 
 .footer-column {
@@ -310,4 +389,21 @@ footer {
     .footer-column {
         width: 100%; /* Adjust footer columns to stack on smaller screens */
     }
+
+    .nav-toggle {
+        display: block; /* Show toggle button */
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+        /* Hide large navigation and only show the toggle button */
+    .logo, .nav-toggle {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
 }

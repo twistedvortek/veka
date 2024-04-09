@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="C:\Users\Shafaat\Desktop\Website\veka\ljmu\static\css\style.css">
     <title>Sayara</title>
 </head>
 <body class="dark-mode">
@@ -103,6 +103,26 @@
     </section>
 </div>
 
+<section class="camera-section">
+    <h2>Upload Your Video</h2>
+    <div class="upload-container">
+        <input type="file" id="video-upload" name="video" accept="video/*" hidden>
+        <button onclick="document.getElementById('video-upload').click()" class="file-choose-button">Choose File</button>
+        <button class="upload-button">Upload Video</button>
+    </div>
+
+    <!-- Video Display Section -->
+    <div class="videos-display">
+        <div class="video-block">
+            <h3>Original Video</h3>
+            <iframe src="your-original-video-url" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-block">
+            <h3>Processed Video</h3>
+            <iframe src="your-processed-video-url" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
 
     </main>
 
@@ -110,6 +130,6 @@
         <p>Made with ❤️ for Liverpool John Moores University - BSc Computer Science Final year project. Copyright is of their respective owners.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="ljmu\static\js\script.js"></script>
 </body>
 </html>

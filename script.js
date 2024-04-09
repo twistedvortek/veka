@@ -21,6 +21,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navbar = document.querySelector('.navbar');
+    
+        navToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    });
+    
+
     function updateModeText() {
         if (document.body.classList.contains('light-mode')) {
             modeToggleText.textContent = 'Light Mode';
