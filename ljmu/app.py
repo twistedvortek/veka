@@ -54,16 +54,34 @@ def upload_file():
         task = process_file.apply_async(args=[filepath])
         return jsonify({'message': 'File uploaded. Processing started.', 'task_id': task.id})
 
+@app.route('/status/<task_id>')
+def taskstatus(task_id):
+    task = process_file.AsyncResult(task_id)
+    response = {
+        'state': task.state,
+        'current': 0,
+        'total': 100,
+        'status': 'Pending...'
+    }
+    if task.info:
+        response.update(task.info)
+    return jsonify(response)
+
 @celery.task(bind=True)
 def process_file(self, filepath):
     # Placeholder for your processing logic
     processed_output = yolo_deepsort_process(filepath)
+
+        # Simulate processing progress
+    for i in range(1, 101):
+        self.update_state(state='PROGRESS', meta={'current': i, 'total': 100, 'status': 'Processing'})
+        time.sleep(0.1)  # Simulate processing delay
     
     # Save processed output to PROCESSED_FOLDER and return path
     processed_filepath = os.path.join(PROCESSED_FOLDER, os.path.basename(filepath))
     # Example processing function call
     # actual_processing_function(filepath, processed_filepath)
-    return {'processed_filepath': processed_filepath}
+    return {'processed_filepath': processed_filepath, 'status': 'Completed'}
 
 def yolo_deepsort_process(filepath):
     # Dummy processing function - replace with actual processing

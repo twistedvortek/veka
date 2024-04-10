@@ -244,6 +244,21 @@ input:checked + .slider:before {
     margin: 0 5px; /* Space between buttons */
 }
   
+#progress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 30px;
+    background-color: #FFA500; /* Orange color */
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+
   /* Video Section Styling */
   .video-section {
     margin: 20px auto;

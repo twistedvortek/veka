@@ -37,3 +37,22 @@ function updateResults(data) {
         resultsSection.appendChild(div);
     });
 }
+
+function checkStatus(taskId) {
+    $.getJSON($SCRIPT_ROOT + '/status/' + taskId, function(data) {
+        if (data.state == 'PROGRESS' || data.state == 'PENDING') {
+            var progress = parseInt(data.current / data.total * 100, 10);
+            $('#progress-bar').css('width', progress + '%');
+            $('#progress-bar').text(progress + '%');
+        } else if (data.state == 'SUCCESS') {
+            clearInterval(statusInterval);
+            $('#progress-bar').css('width', '100%');
+            $('#progress-bar').text('100%');
+            // Update page to show processed video
+        }
+    });
+}
+
+// Trigger the status check after uploading the file
+var taskId = ''; // Assign the task ID returned from the server after upload
+var statusInterval = setInterval(function() { checkStatus(taskId); }, 1000);
