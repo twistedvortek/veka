@@ -1,14 +1,15 @@
-# VEKA
+# VEKA - Your Premier Platform for Esports and Gaming
 
-Welcome to **VEKA** (previously known as VorteK Academy), your premier platform for comprehensive services in esports, tournaments, gaming, talent management, social media, graphic design, video editing, coding, and much more. Hosted on [veka.gg](http://veka.gg), our mission is to offer a wide range of services to gamers, content creators, and digital professionals.
+Welcome to [VEKA](https://veka.gg), previously known as VorteK Academy. VEKA is designed to be a comprehensive service hub for the esports,coding, anime and gaming community, offering a range of services from tournament organization to talent management and creative services like graphic design and video editing.
 
 ## Features
 
-VEKA is designed to be more than just a website; it's a gateway to a plethora of services and a community for like-minded individuals. Here's what you can expect:
+VEKA offers a dynamic array of services tailored for gamers, content creators, and esports enthusiasts:
+- **Esports Services**: Organize and participate in esports events and tournaments.
+- **Talent Showcase**: Discover and manage gaming talent.
+- **Creative Services**: Access services including graphic design, video editing, and more.
+- **Community and Marketplace**: Engage with the community and explore our upcoming marketplace for buying and selling services.
 
-- **Comprehensive Esports Services**: From organizing tournaments to showcasing talent.
-- **Creative Services**: Graphic design, video editing, and coding services tailored for the digital space.
-- **Community and Marketplace**: A platform for community interaction, and a future marketplace for buying and selling related services.
 
 ## Technologies
 
@@ -26,15 +27,19 @@ No special setup is required for version 5.
 
 ## Usage
 
-VEKA is intuitive and designed for ease of use. Just navigate to the desired section to learn about our services or to get in touch.
+VEKA is user-friendly and designed to be intuitive:
+- Access comprehensive esports services from the homepage.
+- Explore our services through easy navigation.
+- Stay updated with the latest in esports and gaming with our news section.
 
-## Contribution
+## Contributing
 
-Contributions are welcome! If you have ideas for improvement or want to contribute to the development of VEKA, please adhere to the generally accepted coding standards and branching strategies. Your input is valuable to us.
+Contributions are welcome! If you have improvements or suggestions, please fork the repository and submit a pull request. We appreciate your input and encourage a collaborative environment. Follow standard coding practices and submit issues or pull requests for review.
 
 ## License
 
-This project is freely available under the [MIT License](LICENSE).
+VEKA is released under the [MIT License](LICENSE). See the LICENSE file in the repository for full details.
+
 
 ## Credits
 
@@ -49,75 +54,14 @@ Contributions to VEKA are greatly appreciated. Here is where we acknowledge thos
 ## Contact
 
 For support or inquiries, feel free to get in touch via the following social media platforms:
-- Twitter: [@whoisshafaat](https://twitter.com/whoisshafaat)
-- Instagram: [@whoisshafaat](https://instagram.com/whoisshafaat)
-- LinkedIn: [Shafaat](https://www.linkedin.com/in/shafaatahmed)
+- Twitter: [@vekagg](https://twitter.com/vekagg)
+- Instagram: [@vekagg](https://instagram.com/vekagg)
+- LinkedIn: [VEKA](https://www.linkedin.com/vekagg)
+
+## Acknowledgments
+
+Special thanks to all contributors who make VEKA better every day. If you would like to contribute, please see the contributing section. We recognize all efforts that help us grow and improve.
 
 ## Demo
 
 Stay tuned for video demos and more interactive content showcasing the capabilities of VEKA.
-
-
-# Sayara: Advanced Driver Assistance and Fleet Management System
-
-## Introduction
-
-Sayara is an innovative project aimed at revolutionizing road safety and fleet management through the integration of cutting-edge object detection and tracking technologies. Utilizing the powerful YOLOv8 for object detection and DeepSORT for object tracking, Sayara provides real-time insights into vehicle and driver behavior, promoting safer driving practices and optimizing fleet operations.
-
-## Features
-
-- **Real-Time Object Detection**: Leverages YOLOv8 to detect vehicles, pedestrians, and other objects in real-time, enhancing situational awareness for drivers.
-- **Advanced Object Tracking**: Incorporates DeepSORT algorithm for seamless tracking of objects across video frames, enabling accurate monitoring of dynamic environments.
-- **Driver Behavior Analysis**: Analyzes driving patterns to identify risky behaviors, offering feedback for improvement.
-- **Fleet Management Dashboard**: Offers a comprehensive dashboard for fleet operators to monitor vehicle locations, track driver performance, and analyze trip data.
-- **Incident Alerts**: Automatically detects potential hazards and notifies drivers and fleet managers, facilitating proactive risk management.
-
-## Technologies Used
-
-- **YOLOv8**: For state-of-the-art object detection, providing high accuracy and speed.
-- **DeepSORT**: For robust object tracking, maintaining object identities even in challenging scenarios.
-- **Python**: The primary programming language used for developing the backend and integration logic.
-- **Flask**: For creating a responsive and scalable web application backend.
-- **HTML/CSS/JavaScript**: For crafting an intuitive and dynamic frontend user experience.
-
-## System Architecture
-
-Sayara's architecture is designed for scalability and performance, consisting of:
-
-- **Frontend Application**: Showcases the real-time video feed, object detection and tracking outputs, and analytical insights through a user-friendly web interface.
-- **Backend Services**: Handles video processing, object detection and tracking, data analysis, and serves as the bridge between the frontend and the core algorithms.
-- **Data Storage**: Securely stores video feeds, detection and tracking data, and analytics for historical analysis and reporting.
-
-## Getting Started
-
-To deploy Sayara locally or on your server, follow these steps:
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/twistedvortek/veka/ljmu.git
-   cd sayara
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the Application**
-   ```bash
-   python app.py
-   ```
-
-Navigate to `http://localhost:5000` in your web browser to access the Sayara dashboard.
-
-## Contribution
-
-Contributions to Sayara are welcome! Whether it's feature requests, bug fixes, or code contributions, please feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-Special thanks to the creators of YOLOv8 and DeepSORT for their groundbreaking work in object detection and tracking. This project stands on the shoulders of giants in the field of computer vision and machine learning.
